@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Matematika" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iMatematika_Tambah_InputMessage">
+    <wsdl:part name="parameters" element="tns:Tambah" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Tambah_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TambahResponse" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Kurang_InputMessage">
+    <wsdl:part name="parameters" element="tns:Kurang" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Kurang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KurangResponse" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Kali_InputMessage">
+    <wsdl:part name="parameters" element="tns:Kali" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Kali_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KaliResponse" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Bagi_InputMessage">
+    <wsdl:part name="parameters" element="tns:Bagi" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_Bagi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BagiResponse" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_TKoordinat_InputMessage">
+    <wsdl:part name="parameters" element="tns:TKoordinat" />
+  </wsdl:message>
+  <wsdl:message name="iMatematika_TKoordinat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TKoordinatResponse" />
+  </wsdl:message>
+  <wsdl:portType name="iMatematika">
+    <wsdl:operation name="Tambah">
+      <wsdl:input wsaw:Action="http://tempuri.org/iMatematika/Tambah" message="tns:iMatematika_Tambah_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iMatematika/TambahResponse" message="tns:iMatematika_Tambah_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Kurang">
+      <wsdl:input wsaw:Action="http://tempuri.org/iMatematika/Kurang" message="tns:iMatematika_Kurang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iMatematika/KurangResponse" message="tns:iMatematika_Kurang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Kali">
+      <wsdl:input wsaw:Action="http://tempuri.org/iMatematika/Kali" message="tns:iMatematika_Kali_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iMatematika/KaliResponse" message="tns:iMatematika_Kali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Bagi">
+      <wsdl:input wsaw:Action="http://tempuri.org/iMatematika/Bagi" message="tns:iMatematika_Bagi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iMatematika/BagiResponse" message="tns:iMatematika_Bagi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TKoordinat">
+      <wsdl:input wsaw:Action="http://tempuri.org/iMatematika/TKoordinat" message="tns:iMatematika_TKoordinat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iMatematika/TKoordinatResponse" message="tns:iMatematika_TKoordinat_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndpointService" type="tns:iMatematika">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Tambah">
+      <soap:operation soapAction="http://tempuri.org/iMatematika/Tambah" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kurang">
+      <soap:operation soapAction="http://tempuri.org/iMatematika/Kurang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kali">
+      <soap:operation soapAction="http://tempuri.org/iMatematika/Kali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bagi">
+      <soap:operation soapAction="http://tempuri.org/iMatematika/Bagi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKoordinat">
+      <soap:operation soapAction="http://tempuri.org/iMatematika/TKoordinat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Matematika">
+    <wsdl:port name="EndpointService" binding="tns:EndpointService">
+      <soap:address location="http://localhost:1907/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
